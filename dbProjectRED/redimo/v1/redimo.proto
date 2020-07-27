@@ -19,6 +19,7 @@ message Table {
   string aws_secret_access_key = 3;
   string aws_session_token = 4;
   string aws_region = 5;
+  string endpoint_override = 6;
 }
 
 message GETRequest {
