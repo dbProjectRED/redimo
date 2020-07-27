@@ -3,11 +3,22 @@ syntax = "proto3";
 package dbProjectRED.redimo.v1;
 
 import "google/protobuf/any.proto";
-import "google/protobuf/empty.proto";
-import "google/protobuf/wrappers.proto";
-option go_package = "github.com/dbProjectRED/redimo/v1";
-message Table {
 
+option go_package = "github.com/dbProjectRED/redimo/v1";
+
+service RedimoService {
+  rpc GET(GETRequest) returns (GETResponse);
+  rpc SET(SETRequest) returns (SETResponse);
+  rpc HGET(HGETRequest) returns (HGETResponse);
+  rpc HSET(HSETRequest) returns (HSETResponse);
+}
+
+message Table {
+  string table = 1;
+  string aws_access_key_id = 2;
+  string aws_secret_access_key = 3;
+  string aws_session_token = 4;
+  string aws_region = 5;
 }
 
 message GETRequest {
@@ -27,7 +38,7 @@ message SETRequest {
 }
 
 message SETResponse {
-  bool already_present = 1;
+
 }
 
 message HGETRequest {
@@ -49,12 +60,6 @@ message HSETRequest {
 }
 
 message HSETResponse {
-  bool already_present = 1;
+
 }
 
-service RedimoService {
-  rpc GET(GETRequest) returns (GETResponse);
-  rpc SET(SETRequest) returns (SETResponse);
-  rpc HGET(HGETRequest) returns (HGETResponse);
-  rpc HSET(HSETRequest) returns (HSETResponse);
-}
