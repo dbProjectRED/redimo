@@ -1,0 +1,22 @@
+# fly.toml file generated for redimo on 2020-07-28T11:13:45+05:30
+
+app = "redimo"
+
+[build]
+  builder = "gcr.io/paketo-buildpacks/builder:tiny"
+
+[[services]]
+  internal_port = 4772
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 250
+    soft_limit = 200
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = "443"
+
+  [[services.tcp_checks]]
+    interval = 10000
+    timeout = 2000

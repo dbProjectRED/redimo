@@ -10,6 +10,8 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
+	"google.golang.org/grpc/reflection"
+
 	v1 "github.com/dbProjectRED/redimo/v1"
 )
 
@@ -27,6 +29,7 @@ func main() {
 				grpczap.UnaryServerInterceptor(logger),
 			)))
 	v1.RegisterRedimoServiceServer(server, RedimoService{})
+	reflection.Register(server)
 	log.Fatal(server.Serve(lis))
 }
 
