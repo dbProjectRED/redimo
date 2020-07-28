@@ -3,9 +3,13 @@ package main
 import (
 	"log"
 	"net"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/grpc-ecosystem/go-grpc-middleware"
 	grpczap "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
+	grpc_recovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
 
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
@@ -27,9 +31,16 @@ func main() {
 		grpc.UnaryInterceptor(
 			grpc_middleware.ChainUnaryServer(
 				grpczap.UnaryServerInterceptor(logger),
+				grpc_recovery.UnaryServerInterceptor(),
 			)))
 	v1.RegisterRedimoServiceServer(server, RedimoService{})
 	reflection.Register(server)
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	go func() {
+		<-sigs
+		server.GracefulStop()
+	}()
 	log.Fatal(server.Serve(lis))
 }
 
