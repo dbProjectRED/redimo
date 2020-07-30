@@ -18,7 +18,7 @@ func (r RedimoService) HGet(ctx context.Context, request *v1.HGetRequest) (*v1.H
 				S: aws.String(request.GetKey()),
 			},
 			"sk": {
-				S: aws.String(request.GetField()),
+				S: aws.String(request.GetFieldName()),
 			},
 		},
 		ReturnConsumedCapacity: dynamodb.ReturnConsumedCapacityTotal,

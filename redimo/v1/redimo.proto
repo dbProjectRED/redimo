@@ -45,7 +45,7 @@ message SetResponse {
 message HGetRequest {
   Table table = 1;
   string key = 2;
-  string field = 3;
+  string field_name = 3;
 }
 
 message HGetResponse {

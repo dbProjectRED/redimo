@@ -8,9 +8,9 @@ import (
 
 func (r RedimoService) Get(ctx context.Context, request *v1.GetRequest) (*v1.GetResponse, error) {
 	resp, err := r.HGet(ctx, &v1.HGetRequest{
-		Table: request.GetTable(),
-		Key:   request.GetKey(),
-		Field: "/",
+		Table:     request.GetTable(),
+		Key:       request.GetKey(),
+		FieldName: "/",
 	})
 	if err != nil {
 		return nil, err
