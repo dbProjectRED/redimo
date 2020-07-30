@@ -24,10 +24,10 @@ func (r RedimoService) Get(ctx context.Context, request *v1.GetRequest) (*v1.Get
 
 func (r RedimoService) Set(ctx context.Context, request *v1.SetRequest) (*v1.SetResponse, error) {
 	_, err := r.HSet(ctx, &v1.HSetRequest{
-		Table: request.GetTable(),
-		Key:   request.GetKey(),
-		Field: "/",
-		Value: request.GetValue(),
+		Table:     request.GetTable(),
+		Key:       request.GetKey(),
+		FieldName: "/",
+		Value:     request.GetValue(),
 	})
 
 	return &v1.SetResponse{}, err

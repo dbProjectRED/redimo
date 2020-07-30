@@ -44,7 +44,7 @@ func (r RedimoService) HSet(ctx context.Context, request *v1.HSetRequest) (*v1.H
 				S: aws.String(request.GetKey()),
 			},
 			"sk": {
-				S: aws.String(request.GetField()),
+				S: aws.String(request.GetFieldName()),
 			},
 			"type": {
 				S: aws.String(request.GetValue().GetTypeUrl()),
