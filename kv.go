@@ -6,8 +6,8 @@ import (
 	v1 "github.com/dbProjectRED/redimo/v1"
 )
 
-func (r RedimoService) GET(ctx context.Context, request *v1.GETRequest) (*v1.GETResponse, error) {
-	resp, err := r.HGET(ctx, &v1.HGETRequest{
+func (r RedimoService) Get(ctx context.Context, request *v1.GetRequest) (*v1.GetResponse, error) {
+	resp, err := r.HGet(ctx, &v1.HGetRequest{
 		Table: request.GetTable(),
 		Key:   request.GetKey(),
 		Field: "/",
@@ -16,19 +16,19 @@ func (r RedimoService) GET(ctx context.Context, request *v1.GETRequest) (*v1.GET
 		return nil, err
 	}
 
-	return &v1.GETResponse{
+	return &v1.GetResponse{
 		Found: resp.GetFound(),
 		Value: resp.GetValue(),
 	}, nil
 }
 
-func (r RedimoService) SET(ctx context.Context, request *v1.SETRequest) (*v1.SETResponse, error) {
-	_, err := r.HSET(ctx, &v1.HSETRequest{
+func (r RedimoService) Set(ctx context.Context, request *v1.SetRequest) (*v1.SetResponse, error) {
+	_, err := r.HSet(ctx, &v1.HSetRequest{
 		Table: request.GetTable(),
 		Key:   request.GetKey(),
 		Field: "/",
 		Value: request.GetValue(),
 	})
 
-	return &v1.SETResponse{}, err
+	return &v1.SetResponse{}, err
 }

@@ -18,14 +18,14 @@ func TestRedimoServiceGetAndSet(t *testing.T) {
 	service := redimo.RedimoService{}
 	table := makeTable()
 	value, _ := ptypes.MarshalAny(&wrappers.StringValue{Value: "v1"})
-	_, err := service.SET(context.Background(), &v1.SETRequest{
+	_, err := service.Set(context.Background(), &v1.SetRequest{
 		Table: &table,
 		Key:   "k1",
 		Value: value,
 	})
 	assert.NoError(t, err)
 
-	resp, err := service.GET(context.Background(), &v1.GETRequest{
+	resp, err := service.Get(context.Background(), &v1.GetRequest{
 		Table: &table,
 		Key:   "k1",
 	})

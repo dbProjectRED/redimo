@@ -10,7 +10,7 @@ import (
 	v1 "github.com/dbProjectRED/redimo/v1"
 )
 
-func (r RedimoService) HGET(ctx context.Context, request *v1.HGETRequest) (*v1.HGETResponse, error) {
+func (r RedimoService) HGet(ctx context.Context, request *v1.HGetRequest) (*v1.HGetResponse, error) {
 	resp, err := request.GetTable().Client().GetItemRequest(&dynamodb.GetItemInput{
 		ConsistentRead: aws.Bool(true),
 		Key: map[string]dynamodb.AttributeValue{
@@ -28,7 +28,7 @@ func (r RedimoService) HGET(ctx context.Context, request *v1.HGETRequest) (*v1.H
 		return nil, err
 	}
 
-	return &v1.HGETResponse{
+	return &v1.HGetResponse{
 		Found: len(resp.Item) > 0,
 		Value: &any.Any{
 			TypeUrl: aws.StringValue(resp.Item["type"].S),
@@ -37,7 +37,7 @@ func (r RedimoService) HGET(ctx context.Context, request *v1.HGETRequest) (*v1.H
 	}, nil
 }
 
-func (r RedimoService) HSET(ctx context.Context, request *v1.HSETRequest) (*v1.HSETResponse, error) {
+func (r RedimoService) HSet(ctx context.Context, request *v1.HSetRequest) (*v1.HSetResponse, error) {
 	_, err := request.GetTable().Client().PutItemRequest(&dynamodb.PutItemInput{
 		Item: map[string]dynamodb.AttributeValue{
 			"pk": {
@@ -61,5 +61,5 @@ func (r RedimoService) HSET(ctx context.Context, request *v1.HSETRequest) (*v1.H
 		return nil, err
 	}
 
-	return &v1.HSETResponse{}, nil
+	return &v1.HSetResponse{}, nil
 }

@@ -104,7 +104,7 @@ func (m *Table) GetEndpointOverride() string {
 	return ""
 }
 
-type GETRequest struct {
+type GetRequest struct {
 	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
 	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -112,46 +112,46 @@ type GETRequest struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GETRequest) Reset()         { *m = GETRequest{} }
-func (m *GETRequest) String() string { return proto.CompactTextString(m) }
-func (*GETRequest) ProtoMessage()    {}
-func (*GETRequest) Descriptor() ([]byte, []int) {
+func (m *GetRequest) Reset()         { *m = GetRequest{} }
+func (m *GetRequest) String() string { return proto.CompactTextString(m) }
+func (*GetRequest) ProtoMessage()    {}
+func (*GetRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{1}
 }
 
-func (m *GETRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GETRequest.Unmarshal(m, b)
+func (m *GetRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetRequest.Unmarshal(m, b)
 }
-func (m *GETRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GETRequest.Marshal(b, m, deterministic)
+func (m *GetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetRequest.Marshal(b, m, deterministic)
 }
-func (m *GETRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GETRequest.Merge(m, src)
+func (m *GetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetRequest.Merge(m, src)
 }
-func (m *GETRequest) XXX_Size() int {
-	return xxx_messageInfo_GETRequest.Size(m)
+func (m *GetRequest) XXX_Size() int {
+	return xxx_messageInfo_GetRequest.Size(m)
 }
-func (m *GETRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GETRequest.DiscardUnknown(m)
+func (m *GetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GETRequest proto.InternalMessageInfo
+var xxx_messageInfo_GetRequest proto.InternalMessageInfo
 
-func (m *GETRequest) GetTable() *Table {
+func (m *GetRequest) GetTable() *Table {
 	if m != nil {
 		return m.Table
 	}
 	return nil
 }
 
-func (m *GETRequest) GetKey() string {
+func (m *GetRequest) GetKey() string {
 	if m != nil {
 		return m.Key
 	}
 	return ""
 }
 
-type GETResponse struct {
+type GetResponse struct {
 	Found                bool     `protobuf:"varint,1,opt,name=found,proto3" json:"found,omitempty"`
 	Value                *any.Any `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -159,46 +159,46 @@ type GETResponse struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GETResponse) Reset()         { *m = GETResponse{} }
-func (m *GETResponse) String() string { return proto.CompactTextString(m) }
-func (*GETResponse) ProtoMessage()    {}
-func (*GETResponse) Descriptor() ([]byte, []int) {
+func (m *GetResponse) Reset()         { *m = GetResponse{} }
+func (m *GetResponse) String() string { return proto.CompactTextString(m) }
+func (*GetResponse) ProtoMessage()    {}
+func (*GetResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{2}
 }
 
-func (m *GETResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GETResponse.Unmarshal(m, b)
+func (m *GetResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetResponse.Unmarshal(m, b)
 }
-func (m *GETResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GETResponse.Marshal(b, m, deterministic)
+func (m *GetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetResponse.Marshal(b, m, deterministic)
 }
-func (m *GETResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GETResponse.Merge(m, src)
+func (m *GetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetResponse.Merge(m, src)
 }
-func (m *GETResponse) XXX_Size() int {
-	return xxx_messageInfo_GETResponse.Size(m)
+func (m *GetResponse) XXX_Size() int {
+	return xxx_messageInfo_GetResponse.Size(m)
 }
-func (m *GETResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GETResponse.DiscardUnknown(m)
+func (m *GetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_GETResponse proto.InternalMessageInfo
+var xxx_messageInfo_GetResponse proto.InternalMessageInfo
 
-func (m *GETResponse) GetFound() bool {
+func (m *GetResponse) GetFound() bool {
 	if m != nil {
 		return m.Found
 	}
 	return false
 }
 
-func (m *GETResponse) GetValue() *any.Any {
+func (m *GetResponse) GetValue() *any.Any {
 	if m != nil {
 		return m.Value
 	}
 	return nil
 }
 
-type SETRequest struct {
+type SetRequest struct {
 	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
 	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Value                *any.Any `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
@@ -207,84 +207,84 @@ type SETRequest struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *SETRequest) Reset()         { *m = SETRequest{} }
-func (m *SETRequest) String() string { return proto.CompactTextString(m) }
-func (*SETRequest) ProtoMessage()    {}
-func (*SETRequest) Descriptor() ([]byte, []int) {
+func (m *SetRequest) Reset()         { *m = SetRequest{} }
+func (m *SetRequest) String() string { return proto.CompactTextString(m) }
+func (*SetRequest) ProtoMessage()    {}
+func (*SetRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{3}
 }
 
-func (m *SETRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_SETRequest.Unmarshal(m, b)
+func (m *SetRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SetRequest.Unmarshal(m, b)
 }
-func (m *SETRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_SETRequest.Marshal(b, m, deterministic)
+func (m *SetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SetRequest.Marshal(b, m, deterministic)
 }
-func (m *SETRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SETRequest.Merge(m, src)
+func (m *SetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SetRequest.Merge(m, src)
 }
-func (m *SETRequest) XXX_Size() int {
-	return xxx_messageInfo_SETRequest.Size(m)
+func (m *SetRequest) XXX_Size() int {
+	return xxx_messageInfo_SetRequest.Size(m)
 }
-func (m *SETRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_SETRequest.DiscardUnknown(m)
+func (m *SetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_SetRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_SETRequest proto.InternalMessageInfo
+var xxx_messageInfo_SetRequest proto.InternalMessageInfo
 
-func (m *SETRequest) GetTable() *Table {
+func (m *SetRequest) GetTable() *Table {
 	if m != nil {
 		return m.Table
 	}
 	return nil
 }
 
-func (m *SETRequest) GetKey() string {
+func (m *SetRequest) GetKey() string {
 	if m != nil {
 		return m.Key
 	}
 	return ""
 }
 
-func (m *SETRequest) GetValue() *any.Any {
+func (m *SetRequest) GetValue() *any.Any {
 	if m != nil {
 		return m.Value
 	}
 	return nil
 }
 
-type SETResponse struct {
+type SetResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *SETResponse) Reset()         { *m = SETResponse{} }
-func (m *SETResponse) String() string { return proto.CompactTextString(m) }
-func (*SETResponse) ProtoMessage()    {}
-func (*SETResponse) Descriptor() ([]byte, []int) {
+func (m *SetResponse) Reset()         { *m = SetResponse{} }
+func (m *SetResponse) String() string { return proto.CompactTextString(m) }
+func (*SetResponse) ProtoMessage()    {}
+func (*SetResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{4}
 }
 
-func (m *SETResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_SETResponse.Unmarshal(m, b)
+func (m *SetResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SetResponse.Unmarshal(m, b)
 }
-func (m *SETResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_SETResponse.Marshal(b, m, deterministic)
+func (m *SetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SetResponse.Marshal(b, m, deterministic)
 }
-func (m *SETResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SETResponse.Merge(m, src)
+func (m *SetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SetResponse.Merge(m, src)
 }
-func (m *SETResponse) XXX_Size() int {
-	return xxx_messageInfo_SETResponse.Size(m)
+func (m *SetResponse) XXX_Size() int {
+	return xxx_messageInfo_SetResponse.Size(m)
 }
-func (m *SETResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_SETResponse.DiscardUnknown(m)
+func (m *SetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_SetResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_SETResponse proto.InternalMessageInfo
+var xxx_messageInfo_SetResponse proto.InternalMessageInfo
 
-type HGETRequest struct {
+type HGetRequest struct {
 	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
 	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Field                string   `protobuf:"bytes,3,opt,name=field,proto3" json:"field,omitempty"`
@@ -293,53 +293,53 @@ type HGETRequest struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *HGETRequest) Reset()         { *m = HGETRequest{} }
-func (m *HGETRequest) String() string { return proto.CompactTextString(m) }
-func (*HGETRequest) ProtoMessage()    {}
-func (*HGETRequest) Descriptor() ([]byte, []int) {
+func (m *HGetRequest) Reset()         { *m = HGetRequest{} }
+func (m *HGetRequest) String() string { return proto.CompactTextString(m) }
+func (*HGetRequest) ProtoMessage()    {}
+func (*HGetRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{5}
 }
 
-func (m *HGETRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HGETRequest.Unmarshal(m, b)
+func (m *HGetRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HGetRequest.Unmarshal(m, b)
 }
-func (m *HGETRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HGETRequest.Marshal(b, m, deterministic)
+func (m *HGetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HGetRequest.Marshal(b, m, deterministic)
 }
-func (m *HGETRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HGETRequest.Merge(m, src)
+func (m *HGetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HGetRequest.Merge(m, src)
 }
-func (m *HGETRequest) XXX_Size() int {
-	return xxx_messageInfo_HGETRequest.Size(m)
+func (m *HGetRequest) XXX_Size() int {
+	return xxx_messageInfo_HGetRequest.Size(m)
 }
-func (m *HGETRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_HGETRequest.DiscardUnknown(m)
+func (m *HGetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_HGetRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_HGETRequest proto.InternalMessageInfo
+var xxx_messageInfo_HGetRequest proto.InternalMessageInfo
 
-func (m *HGETRequest) GetTable() *Table {
+func (m *HGetRequest) GetTable() *Table {
 	if m != nil {
 		return m.Table
 	}
 	return nil
 }
 
-func (m *HGETRequest) GetKey() string {
+func (m *HGetRequest) GetKey() string {
 	if m != nil {
 		return m.Key
 	}
 	return ""
 }
 
-func (m *HGETRequest) GetField() string {
+func (m *HGetRequest) GetField() string {
 	if m != nil {
 		return m.Field
 	}
 	return ""
 }
 
-type HGETResponse struct {
+type HGetResponse struct {
 	Found                bool     `protobuf:"varint,1,opt,name=found,proto3" json:"found,omitempty"`
 	Value                *any.Any `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -347,46 +347,46 @@ type HGETResponse struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *HGETResponse) Reset()         { *m = HGETResponse{} }
-func (m *HGETResponse) String() string { return proto.CompactTextString(m) }
-func (*HGETResponse) ProtoMessage()    {}
-func (*HGETResponse) Descriptor() ([]byte, []int) {
+func (m *HGetResponse) Reset()         { *m = HGetResponse{} }
+func (m *HGetResponse) String() string { return proto.CompactTextString(m) }
+func (*HGetResponse) ProtoMessage()    {}
+func (*HGetResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{6}
 }
 
-func (m *HGETResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HGETResponse.Unmarshal(m, b)
+func (m *HGetResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HGetResponse.Unmarshal(m, b)
 }
-func (m *HGETResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HGETResponse.Marshal(b, m, deterministic)
+func (m *HGetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HGetResponse.Marshal(b, m, deterministic)
 }
-func (m *HGETResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HGETResponse.Merge(m, src)
+func (m *HGetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HGetResponse.Merge(m, src)
 }
-func (m *HGETResponse) XXX_Size() int {
-	return xxx_messageInfo_HGETResponse.Size(m)
+func (m *HGetResponse) XXX_Size() int {
+	return xxx_messageInfo_HGetResponse.Size(m)
 }
-func (m *HGETResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_HGETResponse.DiscardUnknown(m)
+func (m *HGetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_HGetResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_HGETResponse proto.InternalMessageInfo
+var xxx_messageInfo_HGetResponse proto.InternalMessageInfo
 
-func (m *HGETResponse) GetFound() bool {
+func (m *HGetResponse) GetFound() bool {
 	if m != nil {
 		return m.Found
 	}
 	return false
 }
 
-func (m *HGETResponse) GetValue() *any.Any {
+func (m *HGetResponse) GetValue() *any.Any {
 	if m != nil {
 		return m.Value
 	}
 	return nil
 }
 
-type HSETRequest struct {
+type HSetRequest struct {
 	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
 	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
 	Field                string   `protobuf:"bytes,3,opt,name=field,proto3" json:"field,omitempty"`
@@ -396,100 +396,100 @@ type HSETRequest struct {
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *HSETRequest) Reset()         { *m = HSETRequest{} }
-func (m *HSETRequest) String() string { return proto.CompactTextString(m) }
-func (*HSETRequest) ProtoMessage()    {}
-func (*HSETRequest) Descriptor() ([]byte, []int) {
+func (m *HSetRequest) Reset()         { *m = HSetRequest{} }
+func (m *HSetRequest) String() string { return proto.CompactTextString(m) }
+func (*HSetRequest) ProtoMessage()    {}
+func (*HSetRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{7}
 }
 
-func (m *HSETRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HSETRequest.Unmarshal(m, b)
+func (m *HSetRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HSetRequest.Unmarshal(m, b)
 }
-func (m *HSETRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HSETRequest.Marshal(b, m, deterministic)
+func (m *HSetRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HSetRequest.Marshal(b, m, deterministic)
 }
-func (m *HSETRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HSETRequest.Merge(m, src)
+func (m *HSetRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HSetRequest.Merge(m, src)
 }
-func (m *HSETRequest) XXX_Size() int {
-	return xxx_messageInfo_HSETRequest.Size(m)
+func (m *HSetRequest) XXX_Size() int {
+	return xxx_messageInfo_HSetRequest.Size(m)
 }
-func (m *HSETRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_HSETRequest.DiscardUnknown(m)
+func (m *HSetRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_HSetRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_HSETRequest proto.InternalMessageInfo
+var xxx_messageInfo_HSetRequest proto.InternalMessageInfo
 
-func (m *HSETRequest) GetTable() *Table {
+func (m *HSetRequest) GetTable() *Table {
 	if m != nil {
 		return m.Table
 	}
 	return nil
 }
 
-func (m *HSETRequest) GetKey() string {
+func (m *HSetRequest) GetKey() string {
 	if m != nil {
 		return m.Key
 	}
 	return ""
 }
 
-func (m *HSETRequest) GetField() string {
+func (m *HSetRequest) GetField() string {
 	if m != nil {
 		return m.Field
 	}
 	return ""
 }
 
-func (m *HSETRequest) GetValue() *any.Any {
+func (m *HSetRequest) GetValue() *any.Any {
 	if m != nil {
 		return m.Value
 	}
 	return nil
 }
 
-type HSETResponse struct {
+type HSetResponse struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *HSETResponse) Reset()         { *m = HSETResponse{} }
-func (m *HSETResponse) String() string { return proto.CompactTextString(m) }
-func (*HSETResponse) ProtoMessage()    {}
-func (*HSETResponse) Descriptor() ([]byte, []int) {
+func (m *HSetResponse) Reset()         { *m = HSetResponse{} }
+func (m *HSetResponse) String() string { return proto.CompactTextString(m) }
+func (*HSetResponse) ProtoMessage()    {}
+func (*HSetResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_7afd1a0befbd905a, []int{8}
 }
 
-func (m *HSETResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_HSETResponse.Unmarshal(m, b)
+func (m *HSetResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HSetResponse.Unmarshal(m, b)
 }
-func (m *HSETResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_HSETResponse.Marshal(b, m, deterministic)
+func (m *HSetResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HSetResponse.Marshal(b, m, deterministic)
 }
-func (m *HSETResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HSETResponse.Merge(m, src)
+func (m *HSetResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HSetResponse.Merge(m, src)
 }
-func (m *HSETResponse) XXX_Size() int {
-	return xxx_messageInfo_HSETResponse.Size(m)
+func (m *HSetResponse) XXX_Size() int {
+	return xxx_messageInfo_HSetResponse.Size(m)
 }
-func (m *HSETResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_HSETResponse.DiscardUnknown(m)
+func (m *HSetResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_HSetResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_HSETResponse proto.InternalMessageInfo
+var xxx_messageInfo_HSetResponse proto.InternalMessageInfo
 
 func init() {
 	proto.RegisterType((*Table)(nil), "redimo.v1.Table")
-	proto.RegisterType((*GETRequest)(nil), "redimo.v1.GETRequest")
-	proto.RegisterType((*GETResponse)(nil), "redimo.v1.GETResponse")
-	proto.RegisterType((*SETRequest)(nil), "redimo.v1.SETRequest")
-	proto.RegisterType((*SETResponse)(nil), "redimo.v1.SETResponse")
-	proto.RegisterType((*HGETRequest)(nil), "redimo.v1.HGETRequest")
-	proto.RegisterType((*HGETResponse)(nil), "redimo.v1.HGETResponse")
-	proto.RegisterType((*HSETRequest)(nil), "redimo.v1.HSETRequest")
-	proto.RegisterType((*HSETResponse)(nil), "redimo.v1.HSETResponse")
+	proto.RegisterType((*GetRequest)(nil), "redimo.v1.GetRequest")
+	proto.RegisterType((*GetResponse)(nil), "redimo.v1.GetResponse")
+	proto.RegisterType((*SetRequest)(nil), "redimo.v1.SetRequest")
+	proto.RegisterType((*SetResponse)(nil), "redimo.v1.SetResponse")
+	proto.RegisterType((*HGetRequest)(nil), "redimo.v1.HGetRequest")
+	proto.RegisterType((*HGetResponse)(nil), "redimo.v1.HGetResponse")
+	proto.RegisterType((*HSetRequest)(nil), "redimo.v1.HSetRequest")
+	proto.RegisterType((*HSetResponse)(nil), "redimo.v1.HSetResponse")
 }
 
 func init() {
@@ -497,37 +497,37 @@ func init() {
 }
 
 var fileDescriptor_7afd1a0befbd905a = []byte{
-	// 474 bytes of a gzipped FileDescriptorProto
+	// 473 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x91, 0xcf, 0x6e, 0xd3, 0x40,
-	0x10, 0xc6, 0x65, 0x9c, 0x54, 0x64, 0x9c, 0x96, 0x74, 0xd5, 0x82, 0x89, 0x84, 0x04, 0x46, 0x42,
-	0x50, 0x24, 0x5b, 0x09, 0x95, 0x38, 0x17, 0x11, 0x1a, 0xc4, 0xa1, 0x95, 0x9d, 0x13, 0x12, 0xb2,
-	0xfc, 0x67, 0x1a, 0x4c, 0xd3, 0xdd, 0xb0, 0x6b, 0x3b, 0xca, 0x23, 0xf0, 0xb0, 0x9c, 0x78, 0x01,
-	0xe4, 0xd9, 0xa4, 0x59, 0x05, 0x50, 0x2f, 0xe1, 0xb6, 0x33, 0xf3, 0x7d, 0x3b, 0x33, 0xbf, 0x81,
-	0xae, 0xc4, 0xbc, 0xb8, 0x11, 0xfe, 0x5c, 0x8a, 0x52, 0xb0, 0xce, 0x2a, 0xaa, 0x07, 0xfd, 0xc7,
-	0x53, 0x21, 0xa6, 0x33, 0x0c, 0xa8, 0x90, 0x56, 0x57, 0x41, 0xc2, 0x97, 0x5a, 0xe5, 0xfd, 0xb2,
-	0xa0, 0x3d, 0x49, 0xd2, 0x19, 0xb2, 0x23, 0x68, 0x97, 0xcd, 0xc3, 0xb5, 0x9e, 0x5a, 0x2f, 0x3b,
-	0xa1, 0x0e, 0xd8, 0x2b, 0x38, 0x4c, 0x16, 0x2a, 0x4e, 0xb2, 0x0c, 0x95, 0x8a, 0xaf, 0x71, 0x19,
-	0x17, 0xb9, 0x7b, 0x8f, 0x14, 0x07, 0xc9, 0x42, 0x9d, 0x51, 0xfe, 0x13, 0x2e, 0x3f, 0xe6, 0x6c,
-	0x00, 0xc7, 0x8d, 0x54, 0x61, 0x26, 0xb1, 0x34, 0x1c, 0xae, 0x4d, 0x72, 0x96, 0x2c, 0x54, 0x44,
-	0xb5, 0x5b, 0x13, 0x3b, 0xd1, 0xbf, 0x2b, 0x54, 0xaa, 0x10, 0x3c, 0x2e, 0xc5, 0x35, 0x72, 0xb7,
-	0x45, 0xf2, 0x07, 0x24, 0xa7, 0xfc, 0xa4, 0x49, 0xb3, 0x27, 0x00, 0x8d, 0x56, 0xe2, 0xb4, 0x10,
-	0xdc, 0x6d, 0x93, 0xa8, 0x93, 0x2c, 0x54, 0x48, 0x09, 0xf6, 0x1a, 0x0e, 0x91, 0xe7, 0x73, 0x51,
-	0xf0, 0x32, 0x16, 0x35, 0x4a, 0x59, 0xe4, 0xe8, 0xee, 0x91, 0xaa, 0xb7, 0x2e, 0x5c, 0xac, 0xf2,
-	0xde, 0x07, 0x80, 0xf3, 0xd1, 0x24, 0xc4, 0xef, 0x15, 0xaa, 0x92, 0xbd, 0x30, 0x37, 0x77, 0x86,
-	0x3d, 0xff, 0x96, 0x9c, 0x4f, 0x68, 0xd6, 0x2c, 0x7a, 0x60, 0x37, 0xeb, 0xe8, 0xed, 0x9b, 0xa7,
-	0x77, 0x01, 0x0e, 0xfd, 0xa3, 0xe6, 0x82, 0x2b, 0x42, 0x78, 0x25, 0x2a, 0x9e, 0xd3, 0x47, 0xf7,
-	0x43, 0x1d, 0xb0, 0x13, 0x68, 0xd7, 0xc9, 0xac, 0x42, 0x32, 0x3a, 0xc3, 0x23, 0x5f, 0x5f, 0xc3,
-	0x5f, 0x5f, 0xc3, 0x3f, 0xe3, 0xcb, 0x50, 0x4b, 0x3c, 0x09, 0x10, 0xed, 0x60, 0xb0, 0x4d, 0x4f,
-	0xfb, 0xee, 0x9e, 0xfb, 0xe0, 0x44, 0x9b, 0x25, 0xbc, 0x2f, 0xe0, 0x8c, 0x77, 0x01, 0x87, 0x68,
-	0x14, 0x38, 0xcb, 0x57, 0xf7, 0xd7, 0x81, 0x77, 0x09, 0xdd, 0xf1, 0x6e, 0x99, 0xfd, 0xb0, 0xc0,
-	0x19, 0x47, 0xff, 0x6d, 0xe2, 0xcd, 0x2c, 0xad, 0xbb, 0x67, 0x39, 0x80, 0xee, 0xd8, 0x80, 0x39,
-	0xfc, 0x69, 0xc1, 0x7e, 0x48, 0xed, 0x23, 0x94, 0x75, 0x91, 0x21, 0x3b, 0x05, 0xfb, 0x7c, 0x34,
-	0x61, 0xc7, 0xc6, 0x54, 0x1b, 0xda, 0xfd, 0x87, 0xdb, 0xe9, 0x15, 0xa5, 0x53, 0xb0, 0xa3, 0x2d,
-	0x57, 0xf4, 0x77, 0x97, 0xd1, 0x9d, 0xbd, 0x85, 0x56, 0xc3, 0x9a, 0x99, 0x75, 0xe3, 0xb6, 0xfd,
-	0x47, 0x7f, 0xe4, 0x0d, 0x63, 0xb4, 0x6d, 0x8c, 0xfe, 0x61, 0x34, 0x3a, 0xbe, 0x7b, 0xfe, 0xf9,
-	0xd9, 0xb4, 0x28, 0xbf, 0x56, 0xa9, 0x9f, 0x89, 0x9b, 0x20, 0x4f, 0x2f, 0xa5, 0xf8, 0x86, 0x59,
-	0x19, 0x8e, 0xde, 0x07, 0xda, 0x11, 0xd4, 0x83, 0x74, 0x8f, 0xc8, 0xbd, 0xf9, 0x1d, 0x00, 0x00,
-	0xff, 0xff, 0xc5, 0x32, 0x09, 0x05, 0xb0, 0x04, 0x00, 0x00,
+	0x10, 0xc6, 0x15, 0x9c, 0x54, 0x64, 0x9c, 0x96, 0x74, 0xd5, 0x82, 0x89, 0x84, 0x04, 0x46, 0x42,
+	0x50, 0x24, 0x5b, 0x09, 0x95, 0x38, 0x17, 0x01, 0x0d, 0xe2, 0xd0, 0xca, 0xee, 0x09, 0x09, 0x59,
+	0xfe, 0x33, 0x0d, 0xa6, 0xe9, 0x6e, 0xd8, 0x5d, 0x3b, 0xca, 0x23, 0xf0, 0xb0, 0x9c, 0x78, 0x01,
+	0xe4, 0xd9, 0xa4, 0x59, 0x05, 0x50, 0x2f, 0xe9, 0x6d, 0x67, 0xe6, 0xfb, 0x76, 0x66, 0x7e, 0x03,
+	0x3d, 0x89, 0x45, 0x79, 0x2d, 0x82, 0x99, 0x14, 0x5a, 0xb0, 0xee, 0x32, 0xaa, 0x87, 0x83, 0xc7,
+	0x13, 0x21, 0x26, 0x53, 0x0c, 0xa9, 0x90, 0x55, 0x97, 0x61, 0xca, 0x17, 0x46, 0xe5, 0xff, 0x6e,
+	0x41, 0xe7, 0x22, 0xcd, 0xa6, 0xc8, 0x0e, 0xa0, 0xa3, 0x9b, 0x87, 0xd7, 0x7a, 0xda, 0x7a, 0xd9,
+	0x8d, 0x4c, 0xc0, 0x5e, 0xc1, 0x7e, 0x3a, 0x57, 0x49, 0x9a, 0xe7, 0xa8, 0x54, 0x72, 0x85, 0x8b,
+	0xa4, 0x2c, 0xbc, 0x7b, 0xa4, 0xd8, 0x4b, 0xe7, 0xea, 0x84, 0xf2, 0x9f, 0x71, 0xf1, 0xa9, 0x60,
+	0x43, 0x38, 0x6c, 0xa4, 0x0a, 0x73, 0x89, 0xda, 0x72, 0x78, 0x0e, 0xc9, 0x59, 0x3a, 0x57, 0x31,
+	0xd5, 0x6e, 0x4c, 0xec, 0xc8, 0xfc, 0xae, 0x50, 0xa9, 0x52, 0xf0, 0x44, 0x8b, 0x2b, 0xe4, 0x5e,
+	0x9b, 0xe4, 0x0f, 0x48, 0x4e, 0xf9, 0x8b, 0x26, 0xcd, 0x9e, 0x00, 0x34, 0x5a, 0x89, 0x93, 0x52,
+	0x70, 0xaf, 0x43, 0xa2, 0x6e, 0x3a, 0x57, 0x11, 0x25, 0xd8, 0x6b, 0xd8, 0x47, 0x5e, 0xcc, 0x44,
+	0xc9, 0x75, 0x22, 0x6a, 0x94, 0xb2, 0x2c, 0xd0, 0xdb, 0x21, 0x55, 0x7f, 0x55, 0x38, 0x5b, 0xe6,
+	0xfd, 0x8f, 0x00, 0xa7, 0xa8, 0x23, 0xfc, 0x51, 0xa1, 0xd2, 0xec, 0x85, 0xbd, 0xb9, 0x3b, 0xea,
+	0x07, 0x37, 0xe4, 0x02, 0x42, 0xb3, 0x62, 0xd1, 0x07, 0xa7, 0x59, 0xc7, 0x6c, 0xdf, 0x3c, 0xfd,
+	0x33, 0x70, 0xe9, 0x1f, 0x35, 0x13, 0x5c, 0x11, 0xc2, 0x4b, 0x51, 0xf1, 0x82, 0x3e, 0xba, 0x1f,
+	0x99, 0x80, 0x1d, 0x41, 0xa7, 0x4e, 0xa7, 0x15, 0x92, 0xd1, 0x1d, 0x1d, 0x04, 0xe6, 0x1a, 0xc1,
+	0xea, 0x1a, 0xc1, 0x09, 0x5f, 0x44, 0x46, 0xe2, 0x4b, 0x80, 0x78, 0x0b, 0x83, 0xad, 0x7b, 0x3a,
+	0xb7, 0xf7, 0xdc, 0x05, 0x37, 0x5e, 0x2f, 0xe1, 0x7f, 0x05, 0x77, 0xbc, 0x0d, 0x38, 0x44, 0xa3,
+	0xc4, 0x69, 0xb1, 0xbc, 0xbf, 0x09, 0xfc, 0x73, 0xe8, 0x8d, 0xb7, 0xcb, 0xec, 0x67, 0x0b, 0xdc,
+	0x71, 0x7c, 0x67, 0x13, 0xaf, 0x67, 0x69, 0xdf, 0x3e, 0xcb, 0x1e, 0xf4, 0xc6, 0x16, 0xcc, 0xd1,
+	0xaf, 0x16, 0xec, 0x46, 0xd4, 0x3e, 0x46, 0x59, 0x97, 0x39, 0xb2, 0x63, 0x70, 0x4e, 0x51, 0xb3,
+	0x43, 0x6b, 0xaa, 0x35, 0xed, 0xc1, 0xc3, 0xcd, 0xf4, 0x92, 0xd2, 0x31, 0x38, 0xf1, 0x86, 0x2b,
+	0xfe, 0xb7, 0xcb, 0xea, 0xce, 0xde, 0x42, 0xbb, 0x61, 0xcd, 0xec, 0xba, 0x75, 0xdb, 0xc1, 0xa3,
+	0xbf, 0xf2, 0x96, 0x31, 0xde, 0x34, 0xc6, 0xff, 0x31, 0x5a, 0x1d, 0xdf, 0x3d, 0xff, 0xf2, 0x6c,
+	0x52, 0xea, 0x6f, 0x55, 0x16, 0xe4, 0xe2, 0x3a, 0x2c, 0xb2, 0x73, 0x29, 0xbe, 0x63, 0xae, 0xa3,
+	0x0f, 0xef, 0x43, 0xe3, 0x08, 0xeb, 0x61, 0xb6, 0x43, 0xe4, 0xde, 0xfc, 0x09, 0x00, 0x00, 0xff,
+	0xff, 0x06, 0xca, 0xc4, 0xdc, 0xb0, 0x04, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -542,10 +542,10 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type RedimoServiceClient interface {
-	GET(ctx context.Context, in *GETRequest, opts ...grpc.CallOption) (*GETResponse, error)
-	SET(ctx context.Context, in *SETRequest, opts ...grpc.CallOption) (*SETResponse, error)
-	HGET(ctx context.Context, in *HGETRequest, opts ...grpc.CallOption) (*HGETResponse, error)
-	HSET(ctx context.Context, in *HSETRequest, opts ...grpc.CallOption) (*HSETResponse, error)
+	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
+	Set(ctx context.Context, in *SetRequest, opts ...grpc.CallOption) (*SetResponse, error)
+	HGet(ctx context.Context, in *HGetRequest, opts ...grpc.CallOption) (*HGetResponse, error)
+	HSet(ctx context.Context, in *HSetRequest, opts ...grpc.CallOption) (*HSetResponse, error)
 }
 
 type redimoServiceClient struct {
@@ -556,36 +556,36 @@ func NewRedimoServiceClient(cc grpc.ClientConnInterface) RedimoServiceClient {
 	return &redimoServiceClient{cc}
 }
 
-func (c *redimoServiceClient) GET(ctx context.Context, in *GETRequest, opts ...grpc.CallOption) (*GETResponse, error) {
-	out := new(GETResponse)
-	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/GET", in, out, opts...)
+func (c *redimoServiceClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error) {
+	out := new(GetResponse)
+	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/Get", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *redimoServiceClient) SET(ctx context.Context, in *SETRequest, opts ...grpc.CallOption) (*SETResponse, error) {
-	out := new(SETResponse)
-	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/SET", in, out, opts...)
+func (c *redimoServiceClient) Set(ctx context.Context, in *SetRequest, opts ...grpc.CallOption) (*SetResponse, error) {
+	out := new(SetResponse)
+	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/Set", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *redimoServiceClient) HGET(ctx context.Context, in *HGETRequest, opts ...grpc.CallOption) (*HGETResponse, error) {
-	out := new(HGETResponse)
-	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/HGET", in, out, opts...)
+func (c *redimoServiceClient) HGet(ctx context.Context, in *HGetRequest, opts ...grpc.CallOption) (*HGetResponse, error) {
+	out := new(HGetResponse)
+	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/HGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *redimoServiceClient) HSET(ctx context.Context, in *HSETRequest, opts ...grpc.CallOption) (*HSETResponse, error) {
-	out := new(HSETResponse)
-	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/HSET", in, out, opts...)
+func (c *redimoServiceClient) HSet(ctx context.Context, in *HSetRequest, opts ...grpc.CallOption) (*HSetResponse, error) {
+	out := new(HSetResponse)
+	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/HSet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -594,101 +594,101 @@ func (c *redimoServiceClient) HSET(ctx context.Context, in *HSETRequest, opts ..
 
 // RedimoServiceServer is the server API for RedimoService service.
 type RedimoServiceServer interface {
-	GET(context.Context, *GETRequest) (*GETResponse, error)
-	SET(context.Context, *SETRequest) (*SETResponse, error)
-	HGET(context.Context, *HGETRequest) (*HGETResponse, error)
-	HSET(context.Context, *HSETRequest) (*HSETResponse, error)
+	Get(context.Context, *GetRequest) (*GetResponse, error)
+	Set(context.Context, *SetRequest) (*SetResponse, error)
+	HGet(context.Context, *HGetRequest) (*HGetResponse, error)
+	HSet(context.Context, *HSetRequest) (*HSetResponse, error)
 }
 
 // UnimplementedRedimoServiceServer can be embedded to have forward compatible implementations.
 type UnimplementedRedimoServiceServer struct {
 }
 
-func (*UnimplementedRedimoServiceServer) GET(ctx context.Context, req *GETRequest) (*GETResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GET not implemented")
+func (*UnimplementedRedimoServiceServer) Get(ctx context.Context, req *GetRequest) (*GetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (*UnimplementedRedimoServiceServer) SET(ctx context.Context, req *SETRequest) (*SETResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SET not implemented")
+func (*UnimplementedRedimoServiceServer) Set(ctx context.Context, req *SetRequest) (*SetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Set not implemented")
 }
-func (*UnimplementedRedimoServiceServer) HGET(ctx context.Context, req *HGETRequest) (*HGETResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method HGET not implemented")
+func (*UnimplementedRedimoServiceServer) HGet(ctx context.Context, req *HGetRequest) (*HGetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HGet not implemented")
 }
-func (*UnimplementedRedimoServiceServer) HSET(ctx context.Context, req *HSETRequest) (*HSETResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method HSET not implemented")
+func (*UnimplementedRedimoServiceServer) HSet(ctx context.Context, req *HSetRequest) (*HSetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HSet not implemented")
 }
 
 func RegisterRedimoServiceServer(s *grpc.Server, srv RedimoServiceServer) {
 	s.RegisterService(&_RedimoService_serviceDesc, srv)
 }
 
-func _RedimoService_GET_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GETRequest)
+func _RedimoService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RedimoServiceServer).GET(ctx, in)
+		return srv.(RedimoServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/redimo.v1.RedimoService/GET",
+		FullMethod: "/redimo.v1.RedimoService/Get",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RedimoServiceServer).GET(ctx, req.(*GETRequest))
+		return srv.(RedimoServiceServer).Get(ctx, req.(*GetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _RedimoService_SET_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SETRequest)
+func _RedimoService_Set_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RedimoServiceServer).SET(ctx, in)
+		return srv.(RedimoServiceServer).Set(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/redimo.v1.RedimoService/SET",
+		FullMethod: "/redimo.v1.RedimoService/Set",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RedimoServiceServer).SET(ctx, req.(*SETRequest))
+		return srv.(RedimoServiceServer).Set(ctx, req.(*SetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _RedimoService_HGET_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HGETRequest)
+func _RedimoService_HGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RedimoServiceServer).HGET(ctx, in)
+		return srv.(RedimoServiceServer).HGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/redimo.v1.RedimoService/HGET",
+		FullMethod: "/redimo.v1.RedimoService/HGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RedimoServiceServer).HGET(ctx, req.(*HGETRequest))
+		return srv.(RedimoServiceServer).HGet(ctx, req.(*HGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _RedimoService_HSET_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HSETRequest)
+func _RedimoService_HSet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HSetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(RedimoServiceServer).HSET(ctx, in)
+		return srv.(RedimoServiceServer).HSet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/redimo.v1.RedimoService/HSET",
+		FullMethod: "/redimo.v1.RedimoService/HSet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RedimoServiceServer).HSET(ctx, req.(*HSETRequest))
+		return srv.(RedimoServiceServer).HSet(ctx, req.(*HSetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -698,20 +698,20 @@ var _RedimoService_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*RedimoServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GET",
-			Handler:    _RedimoService_GET_Handler,
+			MethodName: "Get",
+			Handler:    _RedimoService_Get_Handler,
 		},
 		{
-			MethodName: "SET",
-			Handler:    _RedimoService_SET_Handler,
+			MethodName: "Set",
+			Handler:    _RedimoService_Set_Handler,
 		},
 		{
-			MethodName: "HGET",
-			Handler:    _RedimoService_HGET_Handler,
+			MethodName: "HGet",
+			Handler:    _RedimoService_HGet_Handler,
 		},
 		{
-			MethodName: "HSET",
-			Handler:    _RedimoService_HSET_Handler,
+			MethodName: "HSet",
+			Handler:    _RedimoService_HSet_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
