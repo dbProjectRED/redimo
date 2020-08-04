@@ -5,9 +5,8 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
-	"github.com/golang/protobuf/ptypes/any"
-
 	v1 "github.com/dbProjectRED/redimo/v1"
+	"github.com/golang/protobuf/ptypes/any"
 )
 
 func (r RedimoService) HGet(ctx context.Context, request *v1.HGetRequest) (*v1.HGetResponse, error) {
@@ -62,4 +61,25 @@ func (r RedimoService) HSet(ctx context.Context, request *v1.HSetRequest) (*v1.H
 	}
 
 	return &v1.HSetResponse{}, nil
+}
+
+func (r RedimoService) HDel(ctx context.Context, request *v1.HDelRequest) (*v1.HDelResponse, error) {
+	_, err := request.GetTable().Client().DeleteItemRequest(&dynamodb.DeleteItemInput{
+		Key: map[string]dynamodb.AttributeValue{
+			"pk": {
+				S: aws.String(request.GetKey()),
+			},
+			"sk": {
+				S: aws.String(request.GetFieldName()),
+			},
+		},
+		ReturnConsumedCapacity: dynamodb.ReturnConsumedCapacityTotal,
+		ReturnValues:           dynamodb.ReturnValueNone,
+		TableName:              aws.String(request.GetTable().GetTable()),
+	}).Send(ctx)
+	if err != nil {
+		return nil, err
+	}
+
+	return &v1.HDelResponse{}, nil
 }

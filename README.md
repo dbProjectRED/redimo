@@ -1,6 +1,6 @@
 # REDIMO
 
-## The Redis API's simplicity over DynamoDB's complexity.
+## Choose the Redis API's simplicity over DynamoDB's complexity.
 
 Web based services today tend to have customers all over the world, and a large number of them active at different times. To deal with the speed/slowness of light, we run our code and application servers at the edges of the internet, close to our users. And because our load graphs are almost never a straight line, we try to run serverless systems that automatically go from zero to millions of requests per second when required. 
 
@@ -12,13 +12,15 @@ The downside of DynamoDB is that it requires a thorough understanding of an unfa
 
 REDIMO runs servers around the world that wrap DynamoDB and offer an intuitive Redis-like API. This API is available as a native RESP (the Redis protocol) server and a gRPC service. Using the RESP server allows you to continue using the Redis client libraries you have experience with, while the gRPC system gives you high-performance connection-pool-free client SDKs in many languages with native protocol buffer support. If you're running Global Tables, you can pass in the region-table combinations you're running, and REDIMO will automatically choose the nearest one. 
 
+### Operations
+
 On both the RESP server and gRPC service, the following Redis-inspired operations are available:
 
 - [X] `GET(key)` retrieves the value stored at the given key.
 
 - [X] `SET(key, value)` sets the value at the given key.
 
-- [ ] `DEL(key)` deletes value at key.
+- [X] `DEL(key)` deletes value at key.
 
 - [ ] `GETSET(key, value)` sets the given value at the key and returns the old value.
 
@@ -38,7 +40,7 @@ On both the RESP server and gRPC service, the following Redis-inspired operation
 
 - [X] `HSET(key, field, value)` 
 
-- [ ] `HDEL(key, field)` 
+- [X] `HDEL(key, field)` 
 
 - [ ] `HGETSET(key, field, value)` 
 

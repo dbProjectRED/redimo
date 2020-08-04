@@ -32,3 +32,13 @@ func (r RedimoService) Set(ctx context.Context, request *v1.SetRequest) (*v1.Set
 
 	return &v1.SetResponse{}, err
 }
+
+func (r RedimoService) Del(ctx context.Context, request *v1.DelRequest) (*v1.DelResponse, error) {
+	_, err := r.HDel(ctx, &v1.HDelRequest{
+		Table:     request.GetTable(),
+		Key:       request.GetKey(),
+		FieldName: "/",
+	})
+
+	return &v1.DelResponse{}, err
+}

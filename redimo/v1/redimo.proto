@@ -9,8 +9,10 @@ option go_package = "github.com/dbProjectRED/redimo/v1";
 service RedimoService {
   rpc Get(GetRequest) returns (GetResponse);
   rpc Set(SetRequest) returns (SetResponse);
+  rpc Del(DelRequest) returns (DelResponse);
   rpc HGet(HGetRequest) returns (HGetResponse);
   rpc HSet(HSetRequest) returns (HSetResponse);
+  rpc HDel(HDelRequest) returns (HDelResponse);
 }
 
 message Table {
@@ -42,6 +44,15 @@ message SetResponse {
 
 }
 
+message DelRequest {
+  Table table = 1;
+  string key = 2;
+}
+
+message DelResponse {
+
+}
+
 message HGetRequest {
   Table table = 1;
   string key = 2;
@@ -62,5 +73,15 @@ message HSetRequest {
 
 message HSetResponse {
 
+}
+
+message HDelRequest {
+  Table table = 1;
+  string key = 2;
+  string field_name = 3;
+}
+
+message HDelResponse {
+  
 }
 

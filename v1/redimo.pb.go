@@ -284,6 +284,84 @@ func (m *SetResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_SetResponse proto.InternalMessageInfo
 
+type DelRequest struct {
+	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
+	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DelRequest) Reset()         { *m = DelRequest{} }
+func (m *DelRequest) String() string { return proto.CompactTextString(m) }
+func (*DelRequest) ProtoMessage()    {}
+func (*DelRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7afd1a0befbd905a, []int{5}
+}
+
+func (m *DelRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DelRequest.Unmarshal(m, b)
+}
+func (m *DelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DelRequest.Marshal(b, m, deterministic)
+}
+func (m *DelRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DelRequest.Merge(m, src)
+}
+func (m *DelRequest) XXX_Size() int {
+	return xxx_messageInfo_DelRequest.Size(m)
+}
+func (m *DelRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_DelRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DelRequest proto.InternalMessageInfo
+
+func (m *DelRequest) GetTable() *Table {
+	if m != nil {
+		return m.Table
+	}
+	return nil
+}
+
+func (m *DelRequest) GetKey() string {
+	if m != nil {
+		return m.Key
+	}
+	return ""
+}
+
+type DelResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DelResponse) Reset()         { *m = DelResponse{} }
+func (m *DelResponse) String() string { return proto.CompactTextString(m) }
+func (*DelResponse) ProtoMessage()    {}
+func (*DelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7afd1a0befbd905a, []int{6}
+}
+
+func (m *DelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DelResponse.Unmarshal(m, b)
+}
+func (m *DelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DelResponse.Marshal(b, m, deterministic)
+}
+func (m *DelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DelResponse.Merge(m, src)
+}
+func (m *DelResponse) XXX_Size() int {
+	return xxx_messageInfo_DelResponse.Size(m)
+}
+func (m *DelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_DelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DelResponse proto.InternalMessageInfo
+
 type HGetRequest struct {
 	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
 	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
@@ -297,7 +375,7 @@ func (m *HGetRequest) Reset()         { *m = HGetRequest{} }
 func (m *HGetRequest) String() string { return proto.CompactTextString(m) }
 func (*HGetRequest) ProtoMessage()    {}
 func (*HGetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7afd1a0befbd905a, []int{5}
+	return fileDescriptor_7afd1a0befbd905a, []int{7}
 }
 
 func (m *HGetRequest) XXX_Unmarshal(b []byte) error {
@@ -351,7 +429,7 @@ func (m *HGetResponse) Reset()         { *m = HGetResponse{} }
 func (m *HGetResponse) String() string { return proto.CompactTextString(m) }
 func (*HGetResponse) ProtoMessage()    {}
 func (*HGetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7afd1a0befbd905a, []int{6}
+	return fileDescriptor_7afd1a0befbd905a, []int{8}
 }
 
 func (m *HGetResponse) XXX_Unmarshal(b []byte) error {
@@ -400,7 +478,7 @@ func (m *HSetRequest) Reset()         { *m = HSetRequest{} }
 func (m *HSetRequest) String() string { return proto.CompactTextString(m) }
 func (*HSetRequest) ProtoMessage()    {}
 func (*HSetRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7afd1a0befbd905a, []int{7}
+	return fileDescriptor_7afd1a0befbd905a, []int{9}
 }
 
 func (m *HSetRequest) XXX_Unmarshal(b []byte) error {
@@ -459,7 +537,7 @@ func (m *HSetResponse) Reset()         { *m = HSetResponse{} }
 func (m *HSetResponse) String() string { return proto.CompactTextString(m) }
 func (*HSetResponse) ProtoMessage()    {}
 func (*HSetResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7afd1a0befbd905a, []int{8}
+	return fileDescriptor_7afd1a0befbd905a, []int{10}
 }
 
 func (m *HSetResponse) XXX_Unmarshal(b []byte) error {
@@ -480,16 +558,106 @@ func (m *HSetResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_HSetResponse proto.InternalMessageInfo
 
+type HDelRequest struct {
+	Table                *Table   `protobuf:"bytes,1,opt,name=table,proto3" json:"table,omitempty"`
+	Key                  string   `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	FieldName            string   `protobuf:"bytes,3,opt,name=field_name,json=fieldName,proto3" json:"field_name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HDelRequest) Reset()         { *m = HDelRequest{} }
+func (m *HDelRequest) String() string { return proto.CompactTextString(m) }
+func (*HDelRequest) ProtoMessage()    {}
+func (*HDelRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7afd1a0befbd905a, []int{11}
+}
+
+func (m *HDelRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HDelRequest.Unmarshal(m, b)
+}
+func (m *HDelRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HDelRequest.Marshal(b, m, deterministic)
+}
+func (m *HDelRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HDelRequest.Merge(m, src)
+}
+func (m *HDelRequest) XXX_Size() int {
+	return xxx_messageInfo_HDelRequest.Size(m)
+}
+func (m *HDelRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_HDelRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HDelRequest proto.InternalMessageInfo
+
+func (m *HDelRequest) GetTable() *Table {
+	if m != nil {
+		return m.Table
+	}
+	return nil
+}
+
+func (m *HDelRequest) GetKey() string {
+	if m != nil {
+		return m.Key
+	}
+	return ""
+}
+
+func (m *HDelRequest) GetFieldName() string {
+	if m != nil {
+		return m.FieldName
+	}
+	return ""
+}
+
+type HDelResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *HDelResponse) Reset()         { *m = HDelResponse{} }
+func (m *HDelResponse) String() string { return proto.CompactTextString(m) }
+func (*HDelResponse) ProtoMessage()    {}
+func (*HDelResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7afd1a0befbd905a, []int{12}
+}
+
+func (m *HDelResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_HDelResponse.Unmarshal(m, b)
+}
+func (m *HDelResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_HDelResponse.Marshal(b, m, deterministic)
+}
+func (m *HDelResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HDelResponse.Merge(m, src)
+}
+func (m *HDelResponse) XXX_Size() int {
+	return xxx_messageInfo_HDelResponse.Size(m)
+}
+func (m *HDelResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_HDelResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HDelResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*Table)(nil), "redimo.v1.Table")
 	proto.RegisterType((*GetRequest)(nil), "redimo.v1.GetRequest")
 	proto.RegisterType((*GetResponse)(nil), "redimo.v1.GetResponse")
 	proto.RegisterType((*SetRequest)(nil), "redimo.v1.SetRequest")
 	proto.RegisterType((*SetResponse)(nil), "redimo.v1.SetResponse")
+	proto.RegisterType((*DelRequest)(nil), "redimo.v1.DelRequest")
+	proto.RegisterType((*DelResponse)(nil), "redimo.v1.DelResponse")
 	proto.RegisterType((*HGetRequest)(nil), "redimo.v1.HGetRequest")
 	proto.RegisterType((*HGetResponse)(nil), "redimo.v1.HGetResponse")
 	proto.RegisterType((*HSetRequest)(nil), "redimo.v1.HSetRequest")
 	proto.RegisterType((*HSetResponse)(nil), "redimo.v1.HSetResponse")
+	proto.RegisterType((*HDelRequest)(nil), "redimo.v1.HDelRequest")
+	proto.RegisterType((*HDelResponse)(nil), "redimo.v1.HDelResponse")
 }
 
 func init() {
@@ -497,37 +665,40 @@ func init() {
 }
 
 var fileDescriptor_7afd1a0befbd905a = []byte{
-	// 481 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x52, 0xc1, 0x6e, 0xd3, 0x40,
-	0x10, 0x95, 0x71, 0x52, 0x91, 0x71, 0x5a, 0xd2, 0x55, 0x0b, 0x26, 0x12, 0x12, 0x18, 0x09, 0x41,
-	0x91, 0x6c, 0x25, 0x54, 0xe2, 0x5c, 0x04, 0x34, 0x08, 0x89, 0x56, 0x76, 0x4f, 0x5c, 0xac, 0xb5,
-	0x3d, 0x09, 0xa6, 0xc9, 0x6e, 0xf0, 0xae, 0x1d, 0xe5, 0x37, 0xf8, 0x4f, 0x4e, 0xfc, 0x00, 0xf2,
-	0x38, 0x69, 0x56, 0x01, 0xd4, 0x4b, 0x7a, 0xf3, 0xbe, 0x79, 0x6f, 0xe6, 0xcd, 0x1b, 0x43, 0xb7,
-	0xc0, 0x2c, 0x9f, 0x49, 0x7f, 0x5e, 0x48, 0x2d, 0x59, 0x67, 0xf5, 0xaa, 0x06, 0xfd, 0xc7, 0x13,
-	0x29, 0x27, 0x53, 0x0c, 0xa8, 0x90, 0x94, 0xe3, 0x80, 0x8b, 0x65, 0xc3, 0xf2, 0x7e, 0x5b, 0xd0,
-	0xbe, 0xe2, 0xc9, 0x14, 0xd9, 0x11, 0xb4, 0x75, 0xfd, 0xe1, 0x5a, 0x4f, 0xad, 0x97, 0x9d, 0xb0,
-	0x79, 0xb0, 0x57, 0x70, 0xc8, 0x17, 0x2a, 0xe6, 0x69, 0x8a, 0x4a, 0xc5, 0xd7, 0xb8, 0x8c, 0xf3,
-	0xcc, 0xbd, 0x47, 0x8c, 0x03, 0xbe, 0x50, 0x67, 0x84, 0x7f, 0xc6, 0xe5, 0xa7, 0x8c, 0x0d, 0xe0,
-	0xb8, 0xa6, 0x2a, 0x4c, 0x0b, 0xd4, 0x86, 0xc2, 0xb5, 0x89, 0xce, 0xf8, 0x42, 0x45, 0x54, 0xbb,
-	0x11, 0xb1, 0x93, 0xa6, 0xbb, 0x42, 0xa5, 0x72, 0x29, 0x62, 0x2d, 0xaf, 0x51, 0xb8, 0x2d, 0xa2,
-	0x3f, 0x20, 0x3a, 0xe1, 0x57, 0x35, 0xcc, 0x9e, 0x00, 0xd4, 0xdc, 0x02, 0x27, 0xb9, 0x14, 0x6e,
-	0x9b, 0x48, 0x1d, 0xbe, 0x50, 0x21, 0x01, 0xec, 0x35, 0x1c, 0xa2, 0xc8, 0xe6, 0x32, 0x17, 0x3a,
-	0x96, 0x15, 0x16, 0x45, 0x9e, 0xa1, 0xbb, 0x47, 0xac, 0xde, 0xba, 0x70, 0xb1, 0xc2, 0xbd, 0x8f,
-	0x00, 0xe7, 0xa8, 0x43, 0xfc, 0x51, 0xa2, 0xd2, 0xec, 0x85, 0xb9, 0xb9, 0x33, 0xec, 0xf9, 0x37,
-	0xc9, 0xf9, 0x14, 0xcd, 0x3a, 0x8b, 0x1e, 0xd8, 0xf5, 0x3a, 0xcd, 0xf6, 0xf5, 0xa7, 0x77, 0x01,
-	0x0e, 0xf5, 0x51, 0x73, 0x29, 0x14, 0x45, 0x38, 0x96, 0xa5, 0xc8, 0xa8, 0xd1, 0xfd, 0xb0, 0x79,
-	0xb0, 0x13, 0x68, 0x57, 0x7c, 0x5a, 0x22, 0x09, 0x9d, 0xe1, 0x91, 0xdf, 0x5c, 0xc3, 0x5f, 0x5f,
-	0xc3, 0x3f, 0x13, 0xcb, 0xb0, 0xa1, 0x78, 0x05, 0x40, 0xb4, 0x03, 0x63, 0x9b, 0x99, 0xf6, 0xed,
-	0x33, 0xf7, 0xc1, 0x89, 0x36, 0x4b, 0x78, 0x63, 0x70, 0x46, 0xbb, 0x08, 0xa7, 0x3e, 0xd8, 0x38,
-	0xc7, 0x69, 0x16, 0x0b, 0x3e, 0xc3, 0xd5, 0x4f, 0xd0, 0x21, 0xe4, 0x0b, 0x9f, 0xa1, 0x77, 0x09,
-	0xdd, 0xd1, 0x6e, 0xc3, 0xfb, 0x69, 0x81, 0x33, 0x8a, 0xee, 0xde, 0xfa, 0xc6, 0x54, 0xeb, 0x76,
-	0x53, 0x07, 0xd0, 0x1d, 0x19, 0xf1, 0x0e, 0x7f, 0x59, 0xb0, 0x1f, 0x92, 0x8f, 0x08, 0x8b, 0x2a,
-	0x4f, 0x91, 0x9d, 0x82, 0x7d, 0x8e, 0x9a, 0x1d, 0x1b, 0xf6, 0x36, 0xf9, 0xf7, 0x1f, 0x6e, 0xc3,
-	0xab, 0xb8, 0x4e, 0xc1, 0x8e, 0xb6, 0x54, 0xd1, 0xbf, 0x55, 0xc6, 0x74, 0xf6, 0x16, 0x5a, 0x75,
-	0xe8, 0xcc, 0xac, 0x1b, 0xd7, 0xee, 0x3f, 0xfa, 0x0b, 0x37, 0x84, 0xd1, 0xb6, 0x30, 0xfa, 0x8f,
-	0xd0, 0x98, 0xf8, 0xee, 0xf9, 0xd7, 0x67, 0x93, 0x5c, 0x7f, 0x2b, 0x13, 0x3f, 0x95, 0xb3, 0x20,
-	0x4b, 0x2e, 0x0b, 0xf9, 0x1d, 0x53, 0x1d, 0x7e, 0x78, 0x1f, 0x34, 0x8a, 0xa0, 0x1a, 0x24, 0x7b,
-	0x94, 0xdc, 0x9b, 0x3f, 0x01, 0x00, 0x00, 0xff, 0xff, 0xa0, 0x81, 0x33, 0x64, 0xc2, 0x04, 0x00,
+	// 529 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x52, 0xd1, 0x6e, 0x12, 0x41,
+	0x14, 0x0d, 0xa5, 0x34, 0x72, 0x17, 0x2a, 0x9d, 0xb4, 0x76, 0x25, 0x31, 0x51, 0x4c, 0x8c, 0xd6,
+	0x64, 0x09, 0xd8, 0xc4, 0xe7, 0x1a, 0xb4, 0x18, 0x13, 0xdb, 0xec, 0xf4, 0xc9, 0x97, 0xcd, 0xb2,
+	0x7b, 0xc1, 0xb5, 0xcb, 0x0c, 0xee, 0x0c, 0x10, 0x7e, 0xc3, 0xef, 0xf3, 0x2f, 0xfc, 0x01, 0x33,
+	0x77, 0xa1, 0x3b, 0x50, 0x0d, 0x0f, 0xe2, 0xdb, 0xcc, 0x99, 0x73, 0xee, 0xdc, 0x7b, 0xce, 0x85,
+	0x5a, 0x86, 0x71, 0x32, 0x96, 0xde, 0x24, 0x93, 0x5a, 0xb2, 0xea, 0xf2, 0x36, 0xeb, 0x34, 0x1f,
+	0x8f, 0xa4, 0x1c, 0xa5, 0xd8, 0xa6, 0x87, 0xc1, 0x74, 0xd8, 0x0e, 0xc5, 0x22, 0x67, 0xb5, 0x7e,
+	0x95, 0xa0, 0x72, 0x13, 0x0e, 0x52, 0x64, 0xc7, 0x50, 0xd1, 0xe6, 0xe0, 0x96, 0x9e, 0x96, 0x5e,
+	0x56, 0xfd, 0xfc, 0xc2, 0x5e, 0xc1, 0x51, 0x38, 0x57, 0x41, 0x18, 0x45, 0xa8, 0x54, 0x70, 0x8b,
+	0x8b, 0x20, 0x89, 0xdd, 0x3d, 0x62, 0x1c, 0x86, 0x73, 0x75, 0x41, 0xf8, 0x27, 0x5c, 0x7c, 0x8c,
+	0x59, 0x07, 0x4e, 0x0c, 0x55, 0x61, 0x94, 0xa1, 0xb6, 0x14, 0x6e, 0x99, 0xe8, 0x2c, 0x9c, 0x2b,
+	0x4e, 0x6f, 0x77, 0x22, 0x76, 0x96, 0x57, 0x57, 0xa8, 0x54, 0x22, 0x45, 0xa0, 0xe5, 0x2d, 0x0a,
+	0x77, 0x9f, 0xe8, 0x0f, 0x89, 0x4e, 0xf8, 0x8d, 0x81, 0xd9, 0x13, 0x00, 0xc3, 0xcd, 0x70, 0x94,
+	0x48, 0xe1, 0x56, 0x88, 0x54, 0x0d, 0xe7, 0xca, 0x27, 0x80, 0xbd, 0x86, 0x23, 0x14, 0xf1, 0x44,
+	0x26, 0x42, 0x07, 0x72, 0x86, 0x59, 0x96, 0xc4, 0xe8, 0x1e, 0x10, 0xab, 0xb1, 0x7a, 0xb8, 0x5a,
+	0xe2, 0xad, 0x0f, 0x00, 0x97, 0xa8, 0x7d, 0xfc, 0x3e, 0x45, 0xa5, 0xd9, 0x0b, 0x7b, 0x72, 0xa7,
+	0xdb, 0xf0, 0xee, 0x9c, 0xf3, 0xc8, 0x9a, 0x95, 0x17, 0x0d, 0x28, 0x9b, 0x71, 0xf2, 0xe9, 0xcd,
+	0xb1, 0x75, 0x05, 0x0e, 0xd5, 0x51, 0x13, 0x29, 0x14, 0x59, 0x38, 0x94, 0x53, 0x11, 0x53, 0xa1,
+	0x07, 0x7e, 0x7e, 0x61, 0x67, 0x50, 0x99, 0x85, 0xe9, 0x14, 0x49, 0xe8, 0x74, 0x8f, 0xbd, 0x3c,
+	0x0d, 0x6f, 0x95, 0x86, 0x77, 0x21, 0x16, 0x7e, 0x4e, 0x69, 0x65, 0x00, 0x7c, 0x07, 0x8d, 0x15,
+	0x7f, 0x96, 0xb7, 0xff, 0x59, 0x07, 0x87, 0x17, 0x43, 0x18, 0x6f, 0x7a, 0x98, 0xfe, 0xbb, 0x37,
+	0x75, 0x70, 0xa8, 0xce, 0xb2, 0xec, 0x10, 0x9c, 0xfe, 0x2e, 0x3c, 0x37, 0x7b, 0x30, 0x4c, 0x30,
+	0x8d, 0x03, 0x11, 0x8e, 0x71, 0xb9, 0x5b, 0x55, 0x42, 0x3e, 0x87, 0x63, 0x6c, 0x5d, 0x43, 0xad,
+	0xbf, 0xdb, 0x4c, 0x7e, 0x94, 0xc0, 0xe9, 0xf3, 0xff, 0xdf, 0x7a, 0xd1, 0xd4, 0xfe, 0xf6, 0xa6,
+	0x0e, 0xa1, 0xd6, 0xb7, 0x53, 0x33, 0xf6, 0xee, 0x22, 0xb6, 0x6d, 0xf6, 0x9a, 0x7f, 0xad, 0x58,
+	0xbb, 0x3f, 0xf7, 0xa0, 0xee, 0x53, 0x6d, 0x8e, 0xd9, 0x2c, 0x89, 0x90, 0x9d, 0x43, 0xf9, 0x12,
+	0x35, 0x3b, 0xb1, 0xbe, 0x2c, 0x72, 0x6f, 0x3e, 0xda, 0x84, 0x97, 0x31, 0x9d, 0x43, 0x99, 0x6f,
+	0xa8, 0xf8, 0x9f, 0x55, 0x7c, 0x5d, 0xd5, 0xc3, 0x74, 0x4d, 0x55, 0x98, 0xb0, 0xa6, 0xb2, 0x7a,
+	0x66, 0x6f, 0x61, 0xdf, 0xac, 0x08, 0xb3, 0xdf, 0xad, 0xdd, 0x6c, 0x9e, 0xde, 0xc3, 0x2d, 0x21,
+	0xdf, 0x14, 0xf2, 0xbf, 0x08, 0xf9, 0x86, 0xd0, 0x34, 0xba, 0x26, 0xb4, 0x3a, 0x3d, 0xbd, 0x87,
+	0xe7, 0xc2, 0x77, 0xcf, 0xbf, 0x3c, 0x1b, 0x25, 0xfa, 0xeb, 0x74, 0xe0, 0x45, 0x72, 0xdc, 0x8e,
+	0x07, 0xd7, 0x99, 0xfc, 0x86, 0x91, 0xf6, 0xdf, 0xf7, 0xda, 0xb9, 0xa2, 0x3d, 0xeb, 0x0c, 0x0e,
+	0x68, 0x41, 0xde, 0xfc, 0x0e, 0x00, 0x00, 0xff, 0xff, 0x84, 0xb4, 0xf9, 0x0a, 0x00, 0x06, 0x00,
 	0x00,
 }
 
@@ -545,8 +716,10 @@ const _ = grpc.SupportPackageIsVersion6
 type RedimoServiceClient interface {
 	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
 	Set(ctx context.Context, in *SetRequest, opts ...grpc.CallOption) (*SetResponse, error)
+	Del(ctx context.Context, in *DelRequest, opts ...grpc.CallOption) (*DelResponse, error)
 	HGet(ctx context.Context, in *HGetRequest, opts ...grpc.CallOption) (*HGetResponse, error)
 	HSet(ctx context.Context, in *HSetRequest, opts ...grpc.CallOption) (*HSetResponse, error)
+	HDel(ctx context.Context, in *HDelRequest, opts ...grpc.CallOption) (*HDelResponse, error)
 }
 
 type redimoServiceClient struct {
@@ -575,6 +748,15 @@ func (c *redimoServiceClient) Set(ctx context.Context, in *SetRequest, opts ...g
 	return out, nil
 }
 
+func (c *redimoServiceClient) Del(ctx context.Context, in *DelRequest, opts ...grpc.CallOption) (*DelResponse, error) {
+	out := new(DelResponse)
+	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/Del", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *redimoServiceClient) HGet(ctx context.Context, in *HGetRequest, opts ...grpc.CallOption) (*HGetResponse, error) {
 	out := new(HGetResponse)
 	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/HGet", in, out, opts...)
@@ -593,12 +775,23 @@ func (c *redimoServiceClient) HSet(ctx context.Context, in *HSetRequest, opts ..
 	return out, nil
 }
 
+func (c *redimoServiceClient) HDel(ctx context.Context, in *HDelRequest, opts ...grpc.CallOption) (*HDelResponse, error) {
+	out := new(HDelResponse)
+	err := c.cc.Invoke(ctx, "/redimo.v1.RedimoService/HDel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RedimoServiceServer is the server API for RedimoService service.
 type RedimoServiceServer interface {
 	Get(context.Context, *GetRequest) (*GetResponse, error)
 	Set(context.Context, *SetRequest) (*SetResponse, error)
+	Del(context.Context, *DelRequest) (*DelResponse, error)
 	HGet(context.Context, *HGetRequest) (*HGetResponse, error)
 	HSet(context.Context, *HSetRequest) (*HSetResponse, error)
+	HDel(context.Context, *HDelRequest) (*HDelResponse, error)
 }
 
 // UnimplementedRedimoServiceServer can be embedded to have forward compatible implementations.
@@ -611,11 +804,17 @@ func (*UnimplementedRedimoServiceServer) Get(ctx context.Context, req *GetReques
 func (*UnimplementedRedimoServiceServer) Set(ctx context.Context, req *SetRequest) (*SetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Set not implemented")
 }
+func (*UnimplementedRedimoServiceServer) Del(ctx context.Context, req *DelRequest) (*DelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Del not implemented")
+}
 func (*UnimplementedRedimoServiceServer) HGet(ctx context.Context, req *HGetRequest) (*HGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HGet not implemented")
 }
 func (*UnimplementedRedimoServiceServer) HSet(ctx context.Context, req *HSetRequest) (*HSetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HSet not implemented")
+}
+func (*UnimplementedRedimoServiceServer) HDel(ctx context.Context, req *HDelRequest) (*HDelResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method HDel not implemented")
 }
 
 func RegisterRedimoServiceServer(s *grpc.Server, srv RedimoServiceServer) {
@@ -658,6 +857,24 @@ func _RedimoService_Set_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RedimoService_Del_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RedimoServiceServer).Del(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/redimo.v1.RedimoService/Del",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RedimoServiceServer).Del(ctx, req.(*DelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _RedimoService_HGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HGetRequest)
 	if err := dec(in); err != nil {
@@ -694,6 +911,24 @@ func _RedimoService_HSet_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RedimoService_HDel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HDelRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RedimoServiceServer).HDel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/redimo.v1.RedimoService/HDel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RedimoServiceServer).HDel(ctx, req.(*HDelRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _RedimoService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "redimo.v1.RedimoService",
 	HandlerType: (*RedimoServiceServer)(nil),
@@ -707,12 +942,20 @@ var _RedimoService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _RedimoService_Set_Handler,
 		},
 		{
+			MethodName: "Del",
+			Handler:    _RedimoService_Del_Handler,
+		},
+		{
 			MethodName: "HGet",
 			Handler:    _RedimoService_HGet_Handler,
 		},
 		{
 			MethodName: "HSet",
 			Handler:    _RedimoService_HSet_Handler,
+		},
+		{
+			MethodName: "HDel",
+			Handler:    _RedimoService_HDel_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

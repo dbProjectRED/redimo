@@ -7,16 +7,13 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/grpc-ecosystem/go-grpc-middleware"
+	v1 "github.com/dbProjectRED/redimo/v1"
+	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpczap "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
 	grpc_recovery "github.com/grpc-ecosystem/go-grpc-middleware/recovery"
-
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
-
 	"google.golang.org/grpc/reflection"
-
-	v1 "github.com/dbProjectRED/redimo/v1"
 )
 
 func main() {
@@ -35,8 +32,10 @@ func main() {
 			)))
 	v1.RegisterRedimoServiceServer(server, RedimoService{})
 	reflection.Register(server)
+
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+
 	go func() {
 		<-sigs
 		server.GracefulStop()
